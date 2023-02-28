@@ -49,7 +49,22 @@
           <mat-hint>Unit is meters</mat-hint>
         </mat-form-field>
       </div>
-      <!-- test -->
+      <div class="col-md-6">
+        <label id="example-radio-group-label">Do you require a trainer?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            class="example-radio-button"
+            *ngFor="let trainerOpt of ['yes', 'no']"
+            [value]="trainerOpt"
+          >
+            {{ trainerOpt }}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div>Selected option is:</div>
+      </div>
     </div>
   </form>
 </div>
