@@ -49,7 +49,7 @@
           <mat-hint>Unit is meters</mat-hint>
         </mat-form-field>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 mt-3">
         <label id="example-radio-group-label">Do you require a trainer?</label>
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
@@ -65,7 +65,7 @@
         </mat-radio-group>
         <div>Selected option is:</div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 mt-3">
         <label id="example-radio-group-label">Gender</label>
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
@@ -79,7 +79,63 @@
             {{ gender }}
           </mat-radio-button>
         </mat-radio-group>
+        <div>Selected gender is:</div>
+      </div>
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Select package</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let package of packages" [value]="package">
+              {{ package }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Wich of the following is important to you?</mat-label>
+          <mat-select multiple>
+            <mat-option
+              *ngFor="let important of importantList"
+              [value]="important"
+            >
+              {{ important }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <label id="example-radio-group-label"
+          >Have you been to a gym before</label
+        >
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            class="example-radio-button"
+            *ngFor="let beenGym of ['yes', 'no']"
+            [value]="beenGym"
+          >
+            {{ beenGym }}
+          </mat-radio-button>
+        </mat-radio-group>
         <div>Selected option is:</div>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Enquiry date</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
       </div>
     </div>
   </form>
