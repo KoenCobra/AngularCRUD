@@ -65,6 +65,22 @@
         </mat-radio-group>
         <div>Selected option is:</div>
       </div>
+      <div class="col-md-6">
+        <label id="example-radio-group-label">Gender</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            class="example-radio-button"
+            *ngFor="let gender of ['Male', 'Female']"
+            [value]="gender"
+          >
+            {{ gender }}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div>Selected option is:</div>
+      </div>
     </div>
   </form>
 </div>
