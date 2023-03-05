@@ -1,20 +1,56 @@
-<mat-card class="example-card mt-4">
+<mat-card *ngIf="userDetail" class="example-card mt-4">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Koen Cobra</mat-card-title>
-    <mat-card-subtitle>koen@test.be</mat-card-subtitle>
+    <mat-card-title
+      >{{ userDetail.firstName }} {{ userDetail.lastName }}</mat-card-title
+    >
+    <mat-card-subtitle>{{ userDetail.email }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     <mat-list role="list">
       <mat-list-item role="listitem">
         <div matLine>
-          Mobile number
-          <button mat-button>+12345689</button>
+          Mobile number:
+          <button mat-button>{{ userDetail.mobile }}</button>
         </div>
       </mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
+      <mat-list-item role="listitem">
+        <div matLine>
+          Gender:
+          <button mat-button>{{ userDetail.gender }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div matLine>
+          Package:
+          <button mat-button>{{ userDetail.package }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div matLine>
+          BMI:
+          <button mat-button>{{ userDetail.bmi }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div matLine>
+          BMI Result:
+          <button mat-button>{{ userDetail.bmiResult }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <div matLine>
+          Trainer Required:
+          <button mat-button>{{ userDetail.requireTrainer }}</button>
+        </div>
+      </mat-list-item>
+      <div class="goals">
+        Goals:
+        <div *ngFor="let row of userDetail.important">
+          <span class="chip">{{ row }}</span>
+        </div>
+      </div>
     </mat-list>
   </mat-card-content>
 </mat-card>

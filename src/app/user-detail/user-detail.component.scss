@@ -1,8 +1,23 @@
 .example-card {
-  max-width: 400px;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
 .example-header-image {
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
+}
+
+.goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chip {
+  background-color: #ff4081;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 100vh;
+  font-size: 0.7rem;
 }
