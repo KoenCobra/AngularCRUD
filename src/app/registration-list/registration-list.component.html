@@ -1,7 +1,18 @@
-<mat-form-field appearance="outline" class="mt-4">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
-</mat-form-field>
+<div class="d-flex justify-content-between align-items-center mt-4 mb-4">
+  <button routerLink="/register" mat-raised-button color="accent">
+    <i class="fa fa-arrow-left"></i>
+    Back to registration
+  </button>
+  <mat-form-field appearance="outline" class="m-0">
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. Mia"
+      #input
+    />
+  </mat-form-field>
+</div>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
@@ -49,7 +60,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
       <td mat-cell *matCellDef="let row">
         <button
-          [routerLink]="['detail', row.id]"
+          [routerLink]="['/detail', row.id]"
           mat-icon-button
           class="text-warning"
         >
@@ -58,7 +69,7 @@
         <button (click)="edit(row.id)" mat-icon-button color="accent">
           <i class="fa fa-pencil"></i>
         </button>
-        <button mat-icon-button color="primary">
+        <button (click)="delete(row.id)" mat-icon-button color="primary">
           <i class="fa fa-trash"></i>
         </button>
       </td>

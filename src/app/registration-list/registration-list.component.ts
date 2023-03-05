@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { User } from '../models/user.model';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
+import { NgConfirmService } from 'ng-confirm-box';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-registration-list',
@@ -13,10 +15,10 @@ import { Router } from '@angular/router';
 })
 export class RegistrationListComponent implements OnInit {
 
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private api: ApiService, private toast: NgToastService, private router: Router, private confirm: NgConfirmService) { }
 
   ngOnInit(): void {
-    this.getUser();
+    this.getUsers();
   }
 
   public dataSource!: MatTableDataSource<User>;
@@ -25,7 +27,7 @@ export class RegistrationListComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   public displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'mobile', 'bmiResult', 'gender', 'package', 'enquiryDate', 'action'];
 
-  getUser() {
+  getUsers() {
     this.api.getRegisteredUsers().subscribe(res => {
       this.users = res;
       this.dataSource = new MatTableDataSource(this.users);
@@ -36,6 +38,20 @@ export class RegistrationListComponent implements OnInit {
 
   edit(id: number) {
     this.router.navigate(['update', id]);
+  }
+
+  delete(id: number) {
+    this.confirm.showConfirm("Are you sure you want to delete",
+      () => {
+        this.api.deleteRegisteredUser(id).subscribe(res => {
+          this.toast.success({ detail: 'SUCCESS', summary: 'Deleted successfully', duration: 3000 })
+          this.getUsers();
+        });
+      },
+      () => {
+
+      });
+
   }
 
   applyFilter(event: Event) {

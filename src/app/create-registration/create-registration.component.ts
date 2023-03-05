@@ -62,7 +62,7 @@ export class CreateRegistrationComponent implements OnInit {
 
   updateForm() {
     this.api.updateRegisteredUser(this.registerFrom.value, this.userIdToUpdate).subscribe(res => {
-      this.toast.success({ detail: "Success", summary: "User updated successfully", duration: 3000 });
+      this.toast.success({ detail: "Success", summary: "Enquiry updated successfully", duration: 3000 });
       this.registerFrom.reset();
       this.router.navigate(['/list'])
     });

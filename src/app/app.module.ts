@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,11 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule,
+    MatCardModule,
+    MatListModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
