@@ -1,3 +1,43 @@
 {
-  "enquiry" : []
+  "enquiry": [
+    {
+      "firstName": "Koen",
+      "lastName": "De Groot",
+      "email": "koendegroot84@gmail.com",
+      "mobile": "0498258342",
+      "weight": 70,
+      "height": 1.77,
+      "bmi": 22.34351559258195,
+      "bmiResult": "Normal weight",
+      "gender": "Male",
+      "requireTrainer": "yes",
+      "package": "Monthly",
+      "important": [
+        "Toxic fat reduction",
+        "Energy and endurance"
+      ],
+      "haveGymBefore": "yes",
+      "enquireDate": "2023-03-14T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "",
+      "lastName": "De Groot",
+      "email": "koendegroot84@gmail.com",
+      "mobile": "0498258342",
+      "weight": 88,
+      "height": 1.8,
+      "bmi": 27.160493827160494,
+      "bmiResult": "Overweight",
+      "gender": "Male",
+      "requireTrainer": "no",
+      "package": "Quarterly",
+      "important": [
+        "Energy and endurance"
+      ],
+      "haveGymBefore": "no",
+      "enquireDate": "2023-03-28T22:00:00.000Z",
+      "id": 2
+    }
+  ]
 }
