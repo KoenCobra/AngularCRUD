@@ -21,7 +21,7 @@
       "id": 1
     },
     {
-      "firstName": "",
+      "firstName": "Koen",
       "lastName": "De Groot",
       "email": "koendegroot84@gmail.com",
       "mobile": "0498258342",
@@ -38,6 +38,25 @@
       "haveGymBefore": "no",
       "enquireDate": "2023-03-28T22:00:00.000Z",
       "id": 2
+    },
+    {
+      "firstName": "Koen",
+      "lastName": "De Groot",
+      "email": "koendegroot84@gmail.com",
+      "mobile": "0498258342",
+      "weight": 88,
+      "height": 1.8,
+      "bmi": 27.160493827160494,
+      "bmiResult": "Overweight",
+      "gender": "Male",
+      "requireTrainer": "no",
+      "package": "Quarterly",
+      "important": [
+        "Energy and endurance"
+      ],
+      "haveGymBefore": "no",
+      "enquireDate": "2023-03-28T22:00:00.000Z",
+      "id": 3
     }
   ]
 }

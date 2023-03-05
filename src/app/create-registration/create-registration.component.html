@@ -195,8 +195,19 @@
       mat-raised-button
       color="accent"
       type="submit"
+      *ngIf="!isUpdateActive"
     >
       Submit
+    </button>
+    <button
+      *ngIf="isUpdateActive"
+      (click)="updateForm()"
+      class="mt-4"
+      mat-raised-button
+      color="accent"
+      type="submit"
+    >
+      Update
     </button>
   </form>
 </div>
